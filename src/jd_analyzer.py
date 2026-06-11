@@ -56,6 +56,12 @@ JD_SIGNALS = {
         "tech mahindra", "mphasis", "hexaware", "l&t infotech"
     ],
     
+"good_industries": [
+    "technology", "software", "internet", "saas",
+    "artificial intelligence", "machine learning",
+    "fintech", "edtech", "healthtech", "ecommerce"
+],
+
     # Experience range
     "min_years": 4,
     "max_years": 12,
