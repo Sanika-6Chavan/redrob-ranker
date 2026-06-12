@@ -79,7 +79,7 @@ def get_candidate_text(candidate):
         parts.append(f"Headline: {profile['headline']}")
     
     if profile.get('summary'):
-        parts.append(f"Summary: {profile['summary']}")
+        parts.append(f"Summary: {profile['summary'][:180]}")
     
     if profile.get('current_title'):
         parts.append(f"Current Role: {profile['current_title']}")
@@ -99,22 +99,22 @@ def get_candidate_text(candidate):
             if s.get('proficiency') in ['advanced', 'expert']
         ]
         all_skills = [s['name'] for s in skills]
-        
+
         if strong_skills:
             parts.append(f"Strong Skills: {', '.join(strong_skills)}")
-        parts.append(f"All Skills: {', '.join(all_skills)}")
-    
+        parts.append(f"All Skills: {', '.join(all_skills[:12])}")
+
     # --- Career history section ---
     career = candidate.get('career_history', [])
-    for job in career[:4]:  # Last 4 jobs kaafi hain
+    for job in career[:3]:  # Last 3 jobs kaafi hain
         title = job.get('title', '')
         company = job.get('company', '')
         desc = job.get('description', '')
         if title and company:
             parts.append(f"Role: {title} at {company}")
         if desc:
-            # Description ke pehle 200 characters lo
-            parts.append(f"Work: {desc[:200]}")
+            # Description ke pehle 120 characters lo
+            parts.append(f"Work: {desc[:120]}")
     
     # --- Education section ---
     education = candidate.get('education', [])

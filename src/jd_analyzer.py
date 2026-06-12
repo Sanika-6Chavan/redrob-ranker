@@ -112,3 +112,29 @@ def get_embedded_jd():
 def get_jd_signals():
     """JD signals dictionary return karo"""
     return JD_SIGNALS
+
+# Alias - dono naam se access ho sake
+def get_jd_text(): 
+    return load_jd_text()
+
+def get_jd_embedding_text():
+    """
+    Chota, keyword-dense JD text — sirf embedding ke liye.
+    256 token limit ke andar fit hone ke liye design kiya hai.
+    Sabse important requirements pehle.
+    """
+    return (
+        "Senior AI Engineer at AI startup. Must have production experience "
+        "with embeddings-based retrieval systems using sentence-transformers, "
+        "OpenAI embeddings, BGE, or E5. Hands-on experience with vector databases "
+        "and hybrid search: Pinecone, Weaviate, Qdrant, Milvus, FAISS, Elasticsearch, "
+        "OpenSearch. Strong Python coding skills. Experience designing evaluation "
+        "frameworks for ranking systems: NDCG, MRR, MAP, A/B testing, offline-online "
+        "correlation. Shipped end-to-end ranking, search, or recommendation systems "
+        "to real users at product companies. 5 to 9 years applied machine learning "
+        "and AI experience, not pure research, not pure consulting like TCS Infosys "
+        "Wipro Accenture. LLM fine-tuning LoRA QLoRA PEFT, learning to rank XGBoost, "
+        "NLP information retrieval background preferred. Located in Pune or Noida "
+        "India, open to relocation. Production deployment experience, not only "
+        "architecture or research roles. Open to work, active candidates preferred."
+    )
