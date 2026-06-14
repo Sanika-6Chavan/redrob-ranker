@@ -91,7 +91,7 @@ def check_title_skill_mismatch(profile, skills):
     return flags
 
 
-def is_honeypot(candidate, threshold=2):
+def is_honeypot(candidate, threshold=1):
     profile = candidate.get('profile', {})
     career = candidate.get('career_history', [])
     skills = candidate.get('skills', [])
