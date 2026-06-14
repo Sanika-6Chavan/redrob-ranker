@@ -96,8 +96,9 @@ def rank_candidates(jd_vector, faiss_index, candidates, candidate_ids,
     print(f"   ✅ Scored {len(results):,} candidates")
     print(f"   🚫 Filtered out {honeypot_count} honeypots")
 
-    # Sort by final score (highest first)
-    results.sort(key=lambda x: x['final_score'], reverse=True)
+    # Sort by final score (highest first), 
+    # tie-break: candidate_id ascending (alphabetical)
+    results.sort(key=lambda x: (-x['final_score'], x['candidate_id']))
 
     final_results = results[:top_n_final]
     print(f"\n✅ Final top {len(final_results)} candidates selected")
