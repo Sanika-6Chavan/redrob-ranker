@@ -219,7 +219,7 @@ __marimo__/
 
 # Project specific - large data files
 data/candidates.jsonl
-data/sample_candidates.json
+#data/sample_candidates.json
 data/*.jsonl
 data/*.json
 
